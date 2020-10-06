@@ -1,0 +1,3 @@
+New password:
+<br>
+{{$pass}}
