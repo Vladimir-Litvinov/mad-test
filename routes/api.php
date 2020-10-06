@@ -41,6 +41,10 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
 
 
+    Route::post('appointments', 'AppointmentController@store');
+
+
+
     Route::get('categories', 'CategoryController@index');
 
     Route::get('statuses', 'StatusController@index');

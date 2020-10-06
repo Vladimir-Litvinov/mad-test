@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             'phone' => 123456,
         ]);
         DB::table('users')->insert([
-            'email' => "vl.developer19@gmail.com",
+            'email' => "user@user",
             'password' => \Illuminate\Support\Facades\Hash::make('123456'),
             'role' => User::ROLE_CLIENT,
             'name' => "client",
