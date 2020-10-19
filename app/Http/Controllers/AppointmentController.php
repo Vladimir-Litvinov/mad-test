@@ -72,6 +72,33 @@ class AppointmentController extends Controller
         //
     }
 
+    public function waiting(Appointment $appointment, Request $request)
+    {
+        if ($appointment->status_id == Status::WAITING) {
+            if (!is_null($appointment->specific_time)) {
+                $appointment->update([
+                    'specific_time' => Carbon::make($appointment->specific_time)->addMinutes(Appointment::APPLICATION_TIME)
+                ]);
+            }
+            if (!is_null($appointment->asap)) {
+                $appointment->created_at = Carbon::now();
+                $appointment->update($request->only('created_at'));
+            }
+            return response()->json([
+                'code' => 0,
+                'message' => 'continue waiting',
+                'data' => $appointment
+            ]);
+        } else {
+            return response()->json([
+                'code' => 1,
+                'message' => 'Appointment status is not "Waiting for submissions"'
+            ]);
+        }
+
+
+    }
+
     public function changeTime(Appointment $appointment, AppointmentTimeRequest $request)
     {
         if ($appointment->status_id == Status::WAITING

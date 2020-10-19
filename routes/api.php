@@ -48,6 +48,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::group(['middleware' => ['owner_appointment:appointment']], function () {
         Route::put('favorite/{appointment}', 'AppointmentController@favorite');
         Route::put('appointments/{appointment}', 'AppointmentController@update');
+        Route::get('continue-waiting/{appointment}', 'AppointmentController@waiting');
     });
 
     Route::get('history-client', 'AppointmentController@historyClient');
