@@ -40,13 +40,20 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::get('services', 'PackageController@services');
 
 
-
+    Route::get('appointments', 'AppointmentController@index');
     Route::post('appointments', 'AppointmentController@store');
+    Route::get('appointments/{appointments}', 'AppointmentController@show');
+    Route::put('appointments-time/{appointments}', 'AppointmentController@changeTime');
 
-
+    Route::group(['middleware' => ['owner_appointment:appointment']], function () {
+        Route::put('favorite/{appointment}', 'AppointmentController@favorite');
+    });
 
     Route::get('categories', 'CategoryController@index');
 
     Route::get('statuses', 'StatusController@index');
+
+    Route::get('favorites', 'AppointmentController@favorites');
+
 
 });
