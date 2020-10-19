@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d784ef9-afd3-4a9d-900f-6a6d6f68a65b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +25,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -143,7 +148,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mad-r2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -169,6 +174,9 @@
       <workItem from="1602092021778" duration="16575000" />
       <workItem from="1602268168189" duration="600000" />
       <workItem from="1602682471735" duration="2763000" />
+      <workItem from="1603098365324" duration="488000" />
+      <workItem from="1603110141942" duration="5310000" />
+      <workItem from="1603115711868" duration="3453000" />
     </task>
     <task id="LOCAL-00001" summary="store AppointmentController">
       <created>1602018435616</created>
@@ -177,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1602018435616</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="store AppointmentController">
+      <created>1603098620386</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603098620386</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,19 +203,25 @@
     <option name="LAST_COMMIT_MESSAGE" value="store AppointmentController" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="345" y="3" key="CommitChangelistDialog2" timestamp="1602018434773">
-      <screen x="0" y="0" width="1440" height="870" />
+    <state x="327" y="0" key="CommitChangelistDialog2" timestamp="1603098619495">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="345" y="3" key="CommitChangelistDialog2/-1366.87.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1602018434773" />
+    <state x="327" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1603098619495" />
+    <state x="150" y="97" key="DiffContextDialog" timestamp="1603098839498">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="150" y="97" key="DiffContextDialog/0.0.1366.738@0.0.1366.738" timestamp="1603098839498" />
     <state x="474" y="161" key="FileChooserDialogImpl" timestamp="1602685975009">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="500" y="190" key="FileChooserDialogImpl/-1366.87.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1602092010827" />
     <state x="474" y="161" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602685975009" />
-    <state x="312" y="168" key="Vcs.Push.Dialog.v2" timestamp="1602018437217">
-      <screen x="0" y="0" width="1440" height="870" />
+    <state x="296" y="143" key="Vcs.Push.Dialog.v2" timestamp="1603098843280">
+      <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="312" y="168" key="Vcs.Push.Dialog.v2/-1366.87.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1602018437217" />
+    <state x="296" y="143" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1603098843280" />
     <state x="427" y="34" width="585" height="801" key="find.popup" timestamp="1602018294348">
       <screen x="0" y="0" width="1440" height="870" />
     </state>

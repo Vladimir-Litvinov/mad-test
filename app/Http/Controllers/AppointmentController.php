@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\AppointmentFavoriteRequest;
 use App\Http\Requests\AppointmentRequest;
 use App\Http\Requests\AppointmentTimeRequest;
+use App\Http\Requests\AppointmentUpdateRequest;
 use App\Models\Appointment;
 use App\Models\Status;
 use Carbon\Carbon;
@@ -44,7 +45,7 @@ class AppointmentController extends Controller
         return response()->json([
             'code' => 0,
             'message' => 'Appointment',
-            'data' => $appointment->load('package.services', 'detailer', 'status'),
+            'data' => $appointment
         ]);
     }
 
@@ -55,9 +56,14 @@ class AppointmentController extends Controller
     }
 
 
-    public function update(Request $request, Appointment $appointment)
+    public function update(Appointment $appointment, AppointmentUpdateRequest $request)
     {
-        //
+        $appointment->update($request->except('package_id'));
+        return response()->json([
+            'code' => 0,
+            'message' => 'Appointment has been updated',
+            'data' => $appointment->load('package.services', 'status')
+        ]);
     }
 
 

@@ -42,11 +42,12 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
     Route::get('appointments', 'AppointmentController@index');
     Route::post('appointments', 'AppointmentController@store');
-    Route::get('appointments/{appointments}', 'AppointmentController@show');
+    Route::get('appointments/{appointment}', 'AppointmentController@show');
     Route::put('appointments-time/{appointments}', 'AppointmentController@changeTime');
 
     Route::group(['middleware' => ['owner_appointment:appointment']], function () {
         Route::put('favorite/{appointment}', 'AppointmentController@favorite');
+        Route::put('appointments/{appointment}', 'AppointmentController@update');
     });
 
     Route::get('categories', 'CategoryController@index');
