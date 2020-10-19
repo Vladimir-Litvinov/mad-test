@@ -50,6 +50,9 @@ Route::group(['middleware' => ['jwt.auth']], function () {
         Route::put('appointments/{appointment}', 'AppointmentController@update');
     });
 
+    Route::get('history-client', 'AppointmentController@historyClient');
+
+
     Route::get('categories', 'CategoryController@index');
 
     Route::get('statuses', 'StatusController@index');

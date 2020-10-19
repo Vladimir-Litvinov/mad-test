@@ -104,6 +104,19 @@ class AppointmentController extends Controller
         }
     }
 
+    public function historyClient()
+    {
+        $appointment = Appointment::where('client_id', auth()->user()->id)
+            ->where('status_id', Status::DONE)
+            ->with('package.services', 'detailer')
+            ->paginate(5);
+        return response()->json([
+            'code' => 0,
+            'message' => 'History',
+            'data' => $appointment
+        ]);
+    }
+
     public function favorite(Appointment $appointment, AppointmentFavoriteRequest $request)
     {
         $appointment->update($request->only('is_favorite'));
@@ -127,7 +140,7 @@ class AppointmentController extends Controller
     {
         $appointment = Appointment::where('is_favorite', Appointment::FAVORITE_YES)
             ->where('client_id', auth()->user()->id)
-            ->with('package.services','status','detailer')
+            ->with('package.services', 'status', 'detailer')
             ->paginate(5);
         return response()->json([
             'code' => 0,

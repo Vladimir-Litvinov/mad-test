@@ -4,7 +4,6 @@
     <list default="true" id="3d784ef9-afd3-4a9d-900f-6a6d6f68a65b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AppointmentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -176,7 +175,7 @@
       <workItem from="1602682471735" duration="2763000" />
       <workItem from="1603098365324" duration="488000" />
       <workItem from="1603110141942" duration="5310000" />
-      <workItem from="1603115711868" duration="3453000" />
+      <workItem from="1603115711868" duration="4423000" />
     </task>
     <task id="LOCAL-00001" summary="store AppointmentController">
       <created>1602018435616</created>
@@ -192,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603098620386</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update AppointmentController">
+      <created>1603120953690</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1603120953690</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,14 +206,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="store AppointmentController" />
-    <option name="LAST_COMMIT_MESSAGE" value="store AppointmentController" />
+    <MESSAGE value="update AppointmentController" />
+    <option name="LAST_COMMIT_MESSAGE" value="update AppointmentController" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="327" y="0" key="CommitChangelistDialog2" timestamp="1603098619495">
+    <state x="327" y="0" key="CommitChangelistDialog2" timestamp="1603120952769">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="345" y="3" key="CommitChangelistDialog2/-1366.87.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1602018434773" />
-    <state x="327" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1603098619495" />
+    <state x="327" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1603120952769" />
     <state x="150" y="97" key="DiffContextDialog" timestamp="1603098839498">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -217,11 +224,11 @@
     </state>
     <state x="500" y="190" key="FileChooserDialogImpl/-1366.87.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1602092010827" />
     <state x="474" y="161" key="FileChooserDialogImpl/0.0.1366.738@0.0.1366.738" timestamp="1602685975009" />
-    <state x="296" y="143" key="Vcs.Push.Dialog.v2" timestamp="1603098843280">
+    <state x="296" y="143" key="Vcs.Push.Dialog.v2" timestamp="1603120956089">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="312" y="168" key="Vcs.Push.Dialog.v2/-1366.87.1366.738/0.0.1440.870@0.0.1440.870" timestamp="1602018437217" />
-    <state x="296" y="143" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1603098843280" />
+    <state x="296" y="143" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1603120956089" />
     <state x="427" y="34" width="585" height="801" key="find.popup" timestamp="1602018294348">
       <screen x="0" y="0" width="1440" height="870" />
     </state>
