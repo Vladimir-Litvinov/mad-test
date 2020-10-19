@@ -99,6 +99,18 @@ class AppointmentController extends Controller
 
     }
 
+    public function addresses()
+    {
+        $app = Appointment::where('client_id', auth()->user()->id)->get(['country', 'city', 'street', 'house', 'zip_code']);
+        $unique = $app->unique(function ($item) {
+            return $item['country'] . $item['city'] . $item['street'] . $item['house'] . $item['zip_code'];
+        });
+        return response()->json([
+            'code' => 0,
+            'data' => $unique->values()
+        ]);
+    }
+
     public function changeTime(Appointment $appointment, AppointmentTimeRequest $request)
     {
         if ($appointment->status_id == Status::WAITING

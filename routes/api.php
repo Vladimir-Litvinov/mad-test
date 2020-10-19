@@ -38,6 +38,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
     Route::get('packages-by-categories/{category}', 'PackageController@getByCategory');
     Route::get('services', 'PackageController@services');
+    Route::get('my-addresses', 'AppointmentController@addresses');
 
 
     Route::get('appointments', 'AppointmentController@index');
