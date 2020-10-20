@@ -111,6 +111,17 @@ class AppointmentController extends Controller
         ]);
     }
 
+    public function saveToLater(Appointment $appointment)
+    {
+        $appointment->update([
+            'status_id' => Status::SAVED_TO_LATER
+        ]);
+        return response()->json([
+            'code' => 0,
+            'message' => 'appointment has been saved to later'
+        ]);
+    }
+
     public function changeTime(Appointment $appointment, AppointmentTimeRequest $request)
     {
         if ($appointment->status_id == Status::WAITING

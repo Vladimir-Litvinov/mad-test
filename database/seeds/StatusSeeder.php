@@ -36,5 +36,8 @@ class StatusSeeder extends Seeder
         DB::table('statuses')->insert([
             'title' => 'Done'
         ]);
+        DB::table('statuses')->insert([
+            'title' => 'SAVED_TO_LATER'
+        ]);
     }
 }

@@ -40,6 +40,9 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::get('services', 'PackageController@services');
     Route::get('my-addresses', 'AppointmentController@addresses');
 
+    Route::post('rejects','RejectController@store');
+
+
 
     Route::get('appointments', 'AppointmentController@index');
     Route::post('appointments', 'AppointmentController@store');
@@ -50,6 +53,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
         Route::put('favorite/{appointment}', 'AppointmentController@favorite');
         Route::put('appointments/{appointment}', 'AppointmentController@update');
         Route::get('continue-waiting/{appointment}', 'AppointmentController@waiting');
+        Route::get('save-to-later/{appointment}', 'AppointmentController@saveToLater');
     });
 
     Route::get('history-client', 'AppointmentController@historyClient');
