@@ -40,6 +40,8 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::get('services', 'PackageController@services');
     Route::get('my-addresses', 'AppointmentController@addresses');
 
+    Route::get('support','SupportController@index');
+
     Route::post('rejects','RejectController@store');
 
 
