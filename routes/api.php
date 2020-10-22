@@ -26,6 +26,8 @@ Route::post('forgot-password', 'AuthController@forgotPassword');
 Route::group(['middleware' => ['jwt.auth']], function () {
     Route::post('change-password', 'AuthController@updatePassword');
 
+    Route::get('profile', 'UserController@profile');
+
     Route::get('packages', 'PackageController@index');
     Route::get('packages/{package}', 'PackageController@show');
     Route::post('packages', 'PackageController@store');
