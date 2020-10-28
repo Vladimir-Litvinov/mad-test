@@ -27,6 +27,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
     Route::post('change-password', 'AuthController@updatePassword');
 
     Route::get('profile', 'UserController@profile');
+    Route::put('user/update', 'UserController@update');
 
     Route::get('packages', 'PackageController@index');
     Route::get('packages/{package}', 'PackageController@show');

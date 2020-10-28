@@ -65,4 +65,9 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasMany(Package::class);
     }
 
+    public function getImageAttribute($value)
+    {
+        return url(config('constants.image_folder.user_photo.get_path') . $value);
+    }
+
 }
