@@ -28,6 +28,7 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
     Route::get('profile', 'UserController@profile');
     Route::put('user/update', 'UserController@update');
+    Route::delete('user/delete', 'UserController@destroy');
 
     Route::get('packages', 'PackageController@index');
     Route::get('packages/{package}', 'PackageController@show');

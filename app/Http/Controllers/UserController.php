@@ -47,4 +47,17 @@ class UserController extends Controller
             'data' => $user
         ]);
     }
+
+    public function destroy()
+    {
+        $user = auth()->user();
+        $path = config('constants.image_folder.user_photo.save_path');
+
+        $this->deletePhoto($user->getRawOriginal('image'), $path);
+        return response()->json([
+            'code' => 0,
+            'message' => 'Profile has been deleted',
+            'data' => $user->delete()
+        ]);
+    }
 }
