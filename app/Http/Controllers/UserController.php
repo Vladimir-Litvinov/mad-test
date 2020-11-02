@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Traits\PhotoTrait;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 

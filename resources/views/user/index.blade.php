@@ -38,6 +38,7 @@
                         <td>{{$model->email}}</td>
                         <td>{{$model->name}}</td>
                         <td>
+
                             <img src="{{$model->image}}" style="height: 100px;width:100px" ;>
                         </td>
                         <td>
