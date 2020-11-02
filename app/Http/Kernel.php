@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\OwnAppointmentMiddleware;
 use App\Http\Middleware\OwnPackageMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -68,5 +69,6 @@ class Kernel extends HttpKernel
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
         'owner_package' => OwnPackageMiddleware::class,
         'owner_appointment' => OwnAppointmentMiddleware::class,
+        'admin' => AdminMiddleware::class,
     ];
 }

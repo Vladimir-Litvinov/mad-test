@@ -20,3 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => ['admin']], function () {
+
+    Route::get('/', function () {
+        return view('home');
+    });
+
+    Route::resource('user',  'Admin\UserController');
+    Route::resource('appointment', 'Admin\AppointmentController');
+
+
+    Route::get('appointments/{user}', 'Admin\AppointmentController@userAppointments')->name('appointments');
+
+});

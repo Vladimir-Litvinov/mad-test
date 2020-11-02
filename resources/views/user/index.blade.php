@@ -37,9 +37,12 @@
                         <td>{{$model->phone}}</td>
                         <td>{{$model->email}}</td>
                         <td>{{$model->name}}</td>
-                        <td><img src="{{$model->image}}" style="height: 100px;width:100px";></td>
-      <td>                            {{ link_to_route('appointments', 'Appointments', [$model->id], ['class' => 'btn btn-primary btn-xs']) }}
-      </td>
+                        <td>
+                            <img src="{{$model->image}}" style="height: 100px;width:100px" ;>
+                        </td>
+                        <td>
+                            {{ link_to_route('appointments', 'Appointments', [$model->id], ['class' => 'btn btn-primary btn-xs']) }}
+                        </td>
 
                     </tr>
                 @endforeach
