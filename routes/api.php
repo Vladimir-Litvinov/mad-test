@@ -21,6 +21,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('login', 'AuthController@login');
 Route::post('register', 'Auth\RegisterController@register');
 
+
+Route::get('login/{social}', 'AuthController@redirectToProvider');
+Route::post('login/{social}/callback', 'AuthController@handleProviderCallback');
+
 Route::post('forgot-password', 'AuthController@forgotPassword');
 
 Route::group(['middleware' => ['jwt.auth']], function () {

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use JWTAuth;
+use Laravel\Socialite\Facades\Socialite;
 use Tymon\JWTAuth\Exceptions\JWTException;
 
 class AuthController extends Controller
@@ -33,29 +34,10 @@ class AuthController extends Controller
         return response()->json(['code' => 0, 'data' => $currentUser, 'token' => $token]);
     }
 
-//    public function register(Request $request)
-//    {
-//        $validator = Validator::make($request->all(), [
-//            'name' => 'required|string|max:255',
-//            'email' => 'required|string|email|max:255|unique:users',
-//            'password' => 'required|string|min:6|confirmed',
-//        ]);
-//
-//        if ($validator->fails()) {
-//            return response()->json($validator->errors()->toJson(), 400);
-//        }
-//
-//        $user = User::create([
-//            'name' => $request->get('name'),
-//            'email' => $request->get('email'),
-//            'phone' => $request->get('phone'),
-//            'role' => User::ROLE_CLIENT,
-//            'password' => Hash::make($request->get('password')),
-//        ]);
-//
-//        $token = JWTAuth::fromUser($user);
-//        return response()->json(['code' => 0, 'data' => $user, 'token' => $token]);
-//    }
+    public function redirectToProvider($social)
+    {
+        return Socialite::driver($social)->stateless()->redirect()->getTargetUrl();
+    }
 
     public function getAuthenticatedUser()
     {
@@ -111,4 +93,36 @@ class AuthController extends Controller
         return response()->json(['code' => 1, 'message' => 'Invalid old password'], 400);
 
     }
+
+    public function handleProviderCallback($social,Request $request)
+    {
+        $user = Socialite::driver($social)->userFromToken($request->access_token);
+
+        try {
+            if ($client = User::where('email', $user->email)->first()) {
+                $token = JWTAuth::fromUser($client);
+            } else {
+                $client = new User();
+                $client->role = User::ROLE_CLIENT;
+                $client->name = $user->name;
+                $client->social_id = $user->id;
+                $client->email = $user->email;
+                $client->image = $user->avatar;
+                $client->social = $social;
+                $client->save();
+                $token = JWTAuth::fromUser($client);
+            }
+        } catch (JWTException $e) {
+            return response()->json([
+                'message' => 'Failed to create token'
+            ],
+                500);
+        }
+        return response()->json([
+            'code' => 0,
+            'data' => User::find($client->id),
+            'token' => $token
+        ]);
+    }
+
 }
