@@ -17,4 +17,11 @@ class Status extends Model
     const SAVED_TO_LATER = 8; // СОХРАНЕНО ПОЗЖЕ
 
     protected $fillable = ['title'];
+
+    public static function getStatusList($value = 'title',$key = 'id')
+    {
+        return static::latest()
+            ->whereIn('id',[Status::NOT_PAID,Status::WAITING])
+            ->pluck($value,$key);
+    }
 }

@@ -27,10 +27,16 @@ Route::group(['middleware' => ['admin']], function () {
         return view('home');
     });
 
-    Route::resource('user',  'Admin\UserController');
+    Route::resource('user', 'Admin\UserController');
+    Route::resource('support', 'Admin\SupportController');
+    Route::resource('service', 'Admin\ServiceController');
+    Route::resource('package', 'Admin\PackageController');
     Route::resource('appointment', 'Admin\AppointmentController');
 
+    Route::get('detailers', 'Admin\UserController@detailers')->name('detailers');
+    Route::put('change-status/{appointment}', 'Admin\AppointmentController@changeStatus')->name('change-status');
     Route::get('edit-status/{appointment}', 'Admin\AppointmentController@editStatus')->name('edit-status');
+    Route::get('getDetailer/{appointment}', 'Admin\AppointmentController@getDetailer')->name('getDetailer');
     Route::get('appointments/{user}', 'Admin\AppointmentController@userAppointments')->name('appointments');
 
 });

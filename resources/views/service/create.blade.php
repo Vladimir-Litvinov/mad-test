@@ -5,8 +5,8 @@
         </div>
     </div>
     <div class="panel-body">
-        {!! Form::open(['route' => 'appointment.store']) !!}
-        @include('appointment._form')
+        {!! Form::open(['route' => 'service.store']) !!}
+        @include('service._form')
         <div class="form-group">
             {!! Form::button('Create', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
         </div>

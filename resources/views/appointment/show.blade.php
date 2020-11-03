@@ -78,7 +78,7 @@
             <div style="text-align: right;">
 
                 {{Form::open(['style' => 'display:flex;float:right', 'route' => ['appointment.destroy', $appointment->id], 'method' => 'DELETE'])}}
-{{--                {{ link_to_route('getDetailer', 'Detailer', [$appointment->id], ['class' => 'btn btn-dark btn-xs']) }}--}}
+                {{ link_to_route('getDetailer', 'Detailer', [$appointment->id], ['class' => 'btn btn-dark btn-xs']) }}
                 {{ link_to_route('edit-status', 'Status', [$appointment->id], ['class' => 'btn btn-secondary btn-xs']) }}
                 {{ link_to_route('appointment.edit', 'Edit', [$appointment->id], ['class' => 'btn btn-success btn-xs']) }}
                 {{Form::button('Delete', ['class' => 'btn btn-danger btn-xs', 'type' => 'submit'])}} {{Form::close()}}
